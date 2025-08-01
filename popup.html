@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>页面截图工具</title>
+  <style>
+    body {
+      width: 200px;
+      height: 360px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      padding: 10px;
+      font-family: 'Arial', sans-serif;
+    }
+
+    h3 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4285f4;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #3367d6;
+    }
+
+    .input-container {
+      margin-top: 15px;
+      margin-bottom: 10px;
+      width: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .input-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    #loopCount {
+      width: 60px;
+      padding: 5px;
+      text-align: center;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      margin-top: 5px;
+    }
+
+    .selector-input {
+      width: 150px;
+      margin-top: 10px;
+    }
+
+    .search-button {
+      margin-left: 5px;
+      padding: 2px 8px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .search-button:hover {
+      background-color: #e0e0e0;
+    }
+
+    .selector-input input {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    #loopUntilEnd {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h3>页面截图工具</h3>
+  <button id="screenshotBtn">截图</button>
+  <div class="input-container">
+    <label for="loopCount">循环次数:</label>
+    <div class="input-row">
+      <input type="number" id="loopCount" min="1" value="2">
+    </div>
+    <div class="checkbox-container">
+      <input type="checkbox" id="loopUntilEnd">
+      <label for="loopUntilEnd" style="display: inline; margin: 0;">循环到终止</label>
+    </div>
+    <div class="selector-input">
+      <label for="nextButtonSelector">下一题按钮选择器:</label>
+      <button id="nextButtonArrow" class="search-button">→</button>
+      <button id="nextButtonSearch" class="search-button">🔍</button>
+      <input type="text" id="nextButtonSelector" value="div[data-v-b37a6650][data-v-3bb7aefe].next.g-pc-click">
+    </div>
+    <div class="selector-input">
+      <label for="endElementSelector">终止元素选择器:</label>
+      <button id="endElementArrow" class="search-button">→</button>
+      <button id="endElementSearch" class="search-button">🔍</button>
+      <input type="text" id="endElementSelector" value="div[data-v-b37a6650][data-v-3bb7aefe].next.disable">
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
