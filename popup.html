@@ -93,6 +93,51 @@
       background-color: #e0e0e0;
     }
 
+    .notification {
+      background-color: #fff3cd;
+      color: #856404;
+      border: 1px solid #ffeeba;
+      border-radius: 4px;
+      padding: 10px;
+      margin-bottom: 15px;
+      width: 100%;
+      text-align: center;
+      font-size: 12px;
+      position: relative;
+    }
+
+    .help-icon {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background-color: #007bff;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 16px;
+      font-size: 12px;
+      cursor: pointer;
+      margin-left: 5px;
+      vertical-align: middle;
+      border: none;
+      padding: 0;
+    }
+
+    #settingsBtn {
+      background-color: #ffc107;
+      color: #333;
+      border: none;
+      border-radius: 4px;
+      padding: 5px 10px;
+      font-size: 12px;
+      margin-top: 5px;
+      cursor: pointer;
+    }
+
+    #settingsBtn:hover {
+      background-color: #e0a800;
+    }
+
     .selector-input input {
       width: 100%;
       padding: 5px;
@@ -108,6 +153,11 @@
 </head>
 <body>
   <h3>页面截图工具</h3>
+  <div class="notification">
+    <p>请确保浏览器已设置好下载路径，并取消勾选"询问保存位置"选项，以确保截图能够自动保存。</p>
+    <button id="settingsBtn">打开设置</button>
+    <button id="helpBtn" class="help-icon">?</button>
+  </div>
   <button id="screenshotBtn">截图</button>
   <div class="input-container">
     <label for="loopCount">循环次数:</label>
@@ -128,6 +178,7 @@
       <button id="endElementArrow" class="search-button">🔍</button>
       <input type="text" id="endElementSelector" value="div[data-v-b37a6650][data-v-3bb7aefe].next.disable">
     </div>
+    <div style="margin-top: 10px;"></div>
   </div>
 
   <script src="popup.js"></script>

@@ -164,6 +164,34 @@ document.addEventListener('DOMContentLoaded', () => {
   setupSelectorTestButtons();
   loadSettings(); // 加载保存的设置
 
+  // 打开浏览器下载设置按钮
+  const settingsBtn = document.getElementById('settingsBtn');
+  if (settingsBtn) {
+    settingsBtn.addEventListener('click', () => {
+      chrome.tabs.create({ url: 'chrome://settings/downloads' });
+    });
+  }
+
+  // 帮助对话框功能
+  const helpBtn = document.getElementById('helpBtn');
+
+  if (helpBtn) {
+    // 点击问号按钮打开新窗口显示帮助图片
+    helpBtn.addEventListener('click', () => {
+      // 获取当前扩展的根目录路径
+      const extensionUrl = chrome.runtime.getURL('downloadHelp.html');
+      // 打开新窗口显示帮助页面
+      chrome.windows.create({
+        url: extensionUrl,
+        type: 'popup',
+        width: 800,
+        height: 600,
+        left: Math.floor((screen.width - 800) / 2),
+        top: Math.floor((screen.height - 600) / 2)
+      });
+    });
+  }
+
   // 添加输入框变化事件监听
   document.getElementById('loopCount').addEventListener('change', saveSettings);
   document.getElementById('loopUntilEnd').addEventListener('change', saveSettings);

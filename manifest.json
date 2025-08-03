@@ -19,5 +19,11 @@
   "permissions": [
     "activeTab",
     "scripting"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["downloadHelp.html", "images/DownloadSetting.png"],
+      "matches": ["<all_urls>"]
+    }
   ]
 }
