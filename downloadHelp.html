@@ -6,98 +6,91 @@
   <title>下载设置帮助</title>
   <style>
     body {
-      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto;
       padding: 20px;
-      font-family: 'Arial', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      box-sizing: border-box;
-      background-color: #f5f5f5;
+      background-color: #f9f9f9;
     }
-
-    .container {
-      max-width: 90%;
-      max-height: 90vh;
+    .markdown-container {
       background-color: white;
-      padding: 20px;
+      padding: 30px;
       border-radius: 8px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
-
+    h1, h2, h3 {
+      color: #2c3e50;
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+    }
+    h1 {
+      font-size: 2em;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 0.3em;
+    }
+    h3 {
+      font-size: 1.5em;
+    }
+    ul {
+      padding-left: 1.5em;
+      margin-bottom: 1em;
+    }
+    li {
+      margin-bottom: 0.5em;
+    }
     img {
       max-width: 100%;
-      max-height: 75vh;
+      height: auto;
       border-radius: 4px;
+      margin: 1em 0;
+      display: block;
     }
-
-    .help-content {
-      margin-top: 20px;
-      width: 100%;
-      text-align: left;
+    p {
+      margin-bottom: 1em;
     }
-
-    .help-content h3 {
-      color: #333;
-      margin-top: 0;
-      margin-bottom: 15px;
-    }
-
-    .help-content ul {
-      padding-left: 20px;
-      margin-bottom: 15px;
-    }
-
-    .help-content li {
-      margin-bottom: 8px;
-      color: #555;
-    }
-
-    .help-content p {
+    .note {
       color: #666;
       font-style: italic;
     }
-
-    button {
-      padding: 10px 20px;
-      background-color: #4285f4;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: background-color 0.3s;
+    a {
+      color: #4285f4;
+      text-decoration: none;
     }
-
-    button:hover {
-      background-color: #3367d6;
+    a:hover {
+      text-decoration: underline;
+    }
+    .star-request {
+      text-align: center;
+      margin-top: 2em;
+      padding-top: 1em;
+      border-top: 1px solid #eee;
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="markdown-container">
+    <h1>下载设置帮助</h1>
+
     <img src="images/DownloadSetting.png" alt="下载设置截图">
-    <div class="help-content">
-      <h3>插件使用帮助</h3>
-      <ul>
-        <li>点击"截图"按钮开始截图</li>
-        <li>设置循环次数以自动截取多个页面</li>
-        <li>勾选"循环到终止"将持续截图直到遇到终止元素</li>
-        <li>可自定义"下一题按钮选择器"和"终止元素选择器"</li>
-        <li>请确保浏览器已设置好下载路径，并取消勾选"询问保存位置"选项</li>
-      </ul>
-      <p>看完帮助后可直接关闭此窗口</p>
+    <img src="images/NeverSleep.png" alt="关闭自动睡眠设置截图">
+
+    <h3>插件使用帮助</h3>
+    <ul>
+      <li>点击"截图"按钮开始截图</li>
+      <li>设置循环次数以自动截取多个页面</li>
+      <li>勾选"循环到终止"将持续截图直到遇到终止元素</li>
+      <li>可自定义"下一题按钮选择器"和"终止元素选择器"</li>
+      <li>请确保浏览器已设置好下载路径，并取消勾选"询问保存位置"选项</li>
+      <li>为确保截图过程不被中断，请关闭电脑的自动睡眠和自动息屏功能</li>
+    </ul>
+
+    <p class="note">看完帮助后可直接关闭此窗口</p>
+
+    <div class="star-request">
+      <a href="https://github.com/ShuShuHong/MultiScreenshot" target="_blank">求star⭐</a>
     </div>
   </div>
-
-  <script>
-    // 无需关闭按钮，用户可直接关闭窗口
-  </script>
-<p style="text-align: center; margin-top: 20px;"><a href="https://github.com/ShuShuHong/MultiScreenshot" target="_blank">求star⭐</a></p>
 </body>
 </html>

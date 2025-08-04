@@ -319,7 +319,14 @@ function startElementCapture(selectorType = 'nextButton') {
             .map(attr => `[${attr.name}]`)
             .join('');
           selector += dataVAttrs;
-          
+
+          // 添加有意义的属性选择器（如name、type、value等）
+          const meaningfulAttrs = Array.from(element.attributes)
+            .filter(attr => ['name', 'type', 'value', 'placeholder', 'title', 'alt', 'href', 'onclick'].includes(attr.name))
+            .map(attr => `[${attr.name}="${attr.value.replace(/"/g, '\\"')}"]`)
+            .join('');
+          selector += meaningfulAttrs;
+
           // 如果选择器不够唯一，添加父元素信息
           if (document.querySelectorAll(selector).length > 1 && element.parentElement) {
             const parentSelector = generateCSSSelector(element.parentElement);
@@ -327,7 +334,7 @@ function startElementCapture(selectorType = 'nextButton') {
               selector = `${parentSelector} > ${selector}`;
             }
           }
-          
+
           return selector;
         }
 
